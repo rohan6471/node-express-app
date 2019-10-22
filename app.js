@@ -21,41 +21,35 @@ app.get('/', function (req, res) {
   res.send('Welcome to the default page!  <br> <br>' +
     'Try going to different URIs by adding these at the end: <br> <br>' +
     '/hello <br>' +
-    '/big <br>' +
+    '/html <br>' +
     '/json <br>' +
     '/greeting/yourname <br>' +
-    '/yo/Dr.Rogers <br>' +
-    '/fortune <br>' +
-    '/fancy/?first=Denise&last=Case <br>' +
-    '<br> <br>' +
-    'Fork the source code from <a href="https://github.com/denisecase/node-express-app">https://github.com/denisecase/node-express-app</a>'
+     '/fortune <br>' +
+    '/fancy/?first=Rohan&last=Bhandari <br>' +
+    '<br> <br>' 
+   
   )
 })
 
 // or use the new arrow function syntax
 // respond with text
 app.get('/hello', (req, res) => {
-  res.send('Hello World!')
+  res.send('Hello All!<br>'+'Welcome to my page')
 })
 
 // or respond with html
-app.get('/big', (req, res) => {
-  res.send('<h1>Hello World!</h1>')
+app.get('/html', (req, res) => {
+  res.send('<h1>Hello World!</h1>'+'<br><h3>Welcome!')
 })
 
 // or respond with JSON
 app.get('/json', (req, res) => {
-  res.send('{"name" : "Nandini"}')
+  res.send('{"name" : "Rohan"}'+'{"title":"Node"')
 })
 
 // :name indicates a parameter at this location in the URI
 app.get('/greeting/:id', (req, res) => {
-  res.send(`Hello! The id provided was ${req.params.id}.`)
-})
-
-// combine your skills and get creative
-app.get('/yo/:buddy', (req, res) => {
-  res.send(`<h1>Yo, ${req.params.buddy}!</h1>`)
+  res.send(`Hello!  ${req.params.id}. Have a good day!`)
 })
 
 // provide multiple query parameters (named first and last) with ? and &
@@ -93,11 +87,10 @@ app.listen(port, hostname, () => {
   console.log(`\n App listening at http://${hostname}:${port}/`)
   console.log(`\n Try going to different URIs:\n`)
   console.log(`   Try /hello`)
-  console.log(`   Try /big`)
+  console.log(`   Try /html`)
   console.log(`   Try /json`)
   console.log(`   Try /fortune`)
   console.log(`   Try /greeting/yourname`)
-  console.log(`   Try /yo/Dr.Rogers`)
   console.log(`   Try /fancy/?first=Denise&last=Case`)
   console.log('\n Hit CTRL-C CTRL-C to stop\n')
 })
