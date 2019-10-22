@@ -39,12 +39,12 @@ app.get('/hello', (req, res) => {
 
 // or respond with html
 app.get('/html', (req, res) => {
-  res.send('<h1>Hello World!</h1>'+'<br><h3>Welcome!')
+  res.send('<h1>Hello World!</h1>')
 })
 
 // or respond with JSON
 app.get('/json', (req, res) => {
-  res.send('{"name" : "Rohan"}'+'{"title":"Node"')
+  res.send('{"name" : "Rohan"}'+'{"title":"Node}"')
 })
 
 // :name indicates a parameter at this location in the URI
